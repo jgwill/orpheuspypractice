@@ -40,18 +40,21 @@ jobs:
     - name: Install orpheuspypractice
       run: |
         pip install -U orpheuspypractice
-    - name: odep installed 1 - All False
-      run: |
-        odep is_abc2midi_installed
-        odep is_musescore_installed 
-        odep is_abc2midi_installed
-    - name: odep CLI Install Dep
+    - name: odep install_musescore
       run: |
         odep install_musescore
-        odep install_imagemagick
-        odep install_abc2midi
-    - name: odep installed 2 - All True
+    - name: odep install_imagemagick
       run: |
-        odep is_abc2midi_installed
+        odep install_imagemagick
+    - name: odep install_abc2midi
+      run: |
+        odep install_abc2midi
+    - name: odep is_imagemagick_installed
+      run: |
+        odep is_imagemagick_installed
+    - name: odep is_musescore_installed
+      run: |
         odep is_musescore_installed 
+    - name: odep is_abc2midi_installed
+      run: |
         odep is_abc2midi_installed
