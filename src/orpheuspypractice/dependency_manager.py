@@ -20,6 +20,13 @@ class DependencyManager:
 
     def is_package_installed(self, package_name):
         try:
+            result = subprocess.run(["which", package_name], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            return result.stdout.decode().strip() != ""
+        except subprocess.CalledProcessError:
+            return False
+    
+    def is_package_installed1(self, package_name):
+        try:
             result = subprocess.run(["dpkg", "-s", package_name], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             return "install ok installed" in result.stdout.decode()
         except subprocess.CalledProcessError:
