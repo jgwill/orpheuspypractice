@@ -43,7 +43,8 @@ def remove_abc2midi():
 
 def is_abc2midi_installed():
     manager = DependencyManager()
-    return manager.is_package_installed("abcmidi")
+    midi_converter = "abc2midi"
+    return manager.is_package_installed(midi_converter)
 
 
 def main():
