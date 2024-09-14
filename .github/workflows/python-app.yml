@@ -37,21 +37,21 @@ jobs:
     - name: Test with UnitTest
       run: |
         python -m unittest discover -s src
-    - name: odep installed 1 - All False
+    - name: Install orpheuspypractice
       run: |
         pip install -U orpheuspypractice
+    - name: odep installed 1 - All False
+      run: |
         odep is_abc2midi_installed
         odep is_musescore_installed 
         odep is_abc2midi_installed
     - name: odep CLI Install Dep
       run: |
-        pip install -U orpheuspypractice
         odep install_musescore
         odep install_imagemagick
         odep install_abc2midi
     - name: odep installed 2 - All True
       run: |
-        pip install -U orpheuspypractice
         odep is_abc2midi_installed
         odep is_musescore_installed 
         odep is_abc2midi_installed
