@@ -30,15 +30,15 @@ def is_imagemagick_installed():
 
 def install_abc2midi():
     manager = DependencyManager()
-    manager.install_package("abc2midi")
+    manager.install_package("abcmidi")
 
 def remove_abc2midi():
     manager = DependencyManager()
-    manager.remove_package("abc2midi")
+    manager.remove_package("abcmidi")
 
 def is_abc2midi_installed():
     manager = DependencyManager()
-    return manager.is_package_installed("abc2midi")
+    return manager.is_package_installed("abcmidi")
 
 
 def main():
