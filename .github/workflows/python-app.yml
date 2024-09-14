@@ -37,7 +37,7 @@ jobs:
     - name: Test with UnitTest
       run: |
         python -m unittest discover -s src
-    - name: odep
+    - name: odep CLI tests if Dep installed
       run: |
         pip install -U orpheuspypractice
         odep is_abc2midi_installed
