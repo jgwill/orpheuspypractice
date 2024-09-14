@@ -24,6 +24,11 @@ RUN echo "jgi ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 USER jgi
 
+# Set up the virtual display
+ENV DISPLAY=:99
+RUN sudo Xvfb :99 -screen 0 1024x768x16 
+
 WORKDIR /work
 
-
+# Run the application with xvfb
+CMD ["xvfb-run", "-a", "
