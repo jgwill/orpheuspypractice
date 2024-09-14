@@ -20,8 +20,8 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            "jgabcli2 = orpheuspypractice:jgabcli_main",
-            "say_hello = orpheuspypractice:say_hello",
+            "oabc = orpheuspypractice:jgabcli_main",
+            "say_hello_orpheuspypractice = orpheuspypractice:say_hello",
         ]
     },
     classifiers=[
