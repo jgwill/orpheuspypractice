@@ -23,7 +23,7 @@ setup(
             "oabc = orpheuspypractice:jgabcli_main",
             "omid2score = orpheuspypractice:jgabcli_main_mid2score",
             "say_hello_orpheuspypractice = orpheuspypractice:say_hello",
-            "odep = orpheuspypractice:dependency_action:main"
+            "odep = orpheuspypractice.dependency_action:main"
         ]
     },
     classifiers=[
