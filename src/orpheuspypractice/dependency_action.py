@@ -16,15 +16,17 @@ def is_musescore_installed():
 
 def install_imagemagick():
     manager = DependencyManager()
+    alt_package="imagemagick-6.q16"
     manager.install_package("imagemagick")
 
 def remove_imagemagick():
     manager = DependencyManager()
+    alt_package="imagemagick-6.q16"
     manager.remove_package("imagemagick")
 
 def is_imagemagick_installed():
     manager = DependencyManager()
-    return manager.is_package_installed("imagemagick")
+    return manager.is_package_installed("convert")
 
 def install_abc2midi():
     manager = DependencyManager()
