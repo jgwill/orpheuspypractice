@@ -9,6 +9,7 @@
 			{
 				"file": ".copilot-instructions.md"
 			}
-		]
+		],
+		"makefile.configureOnOpen": false
 	}
 }
