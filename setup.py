@@ -16,11 +16,12 @@ setup(
         "requests",
         "music21",
         "ipython",
-        "jgcmlib"
+        "jgcmlib>=1.0.41"
     ],
     entry_points={
         'console_scripts': [
             "oabc = orpheuspypractice:jgabcli_main",
+            "omid2score = orpheuspypractice:jgabcli_main_mid2score",
             "say_hello_orpheuspypractice = orpheuspypractice:say_hello",
         ]
     },
