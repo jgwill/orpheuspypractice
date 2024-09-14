@@ -1,4 +1,0 @@
-[submodule "src/jgcmlib"]
-	path = src/jgcmlib
-	url = git@github.com:jgwill/jgcmlib.git
-	branch = main
