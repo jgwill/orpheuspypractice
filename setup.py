@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='orpheuspypractice',
-    version='0.1.9',
+    version='0.1.14',
     author='JGWill',
     author_email='jgi@jgwill.com',
     description='A Practice Package to Experiment with Orpheus\'s goals',
@@ -16,10 +16,11 @@ setup(
         "requests",
         "music21",
         "ipython",
+        "jgcmlib"
     ],
-            # "jgabcli2 = orpheuspypractic:jgabcli_main",
     entry_points={
         'console_scripts': [
+            "jgabcli2 = orpheuspypractice:jgabcli_main",
             "say_hello = orpheuspypractice:say_hello",
         ]
     },

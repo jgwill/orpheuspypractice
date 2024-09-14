@@ -1,4 +1,4 @@
-#from jgcmlib.jgabcli import main as jgabcli_main
+from jgcmlib.jgabcli import main as jgabcli_main
 
 
 
