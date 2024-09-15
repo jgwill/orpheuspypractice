@@ -2,3 +2,7 @@
 	path = src/jgcmlib
 	url = git@github.com:jgwill/jgcmlib.git
 	branch = main
+[submodule "src/jghfmanager"]
+	path = src/jghfmanager
+	url = git@github.com:jgwill/jghfmanager.git
+	branch = main
