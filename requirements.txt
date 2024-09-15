@@ -1,4 +1,4 @@
-jgcmlib>=1.0.51
+jgcmlib>=1.0.54
 tlid
 requests
 music21
