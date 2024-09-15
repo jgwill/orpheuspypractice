@@ -16,7 +16,7 @@ setup(
         "requests",
         "music21",
         "ipython",
-        "jgcmlib>=1.0.55"
+        "jgcmlib>=1.0.57"
     ],
     entry_points={
         'console_scripts': [
