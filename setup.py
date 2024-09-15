@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='orpheuspypractice',
-    version='0.1.41',
+    version='0.1.42',
     author='JGWill',
     author_email='jgi@jgwill.com',
     description='A Practice Package to Experiment with Orpheus\'s goals',
