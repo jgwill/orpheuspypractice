@@ -165,3 +165,4 @@ bin/**/requirements.txt
 bin/**/samples/
 bin/**/scripts/
 bin/**/dist/
+bin/**/tests/

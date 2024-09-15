@@ -1,7 +1,7 @@
 ctlid=2409141847
-dockertag=jgwill/orpheus:app
+dockertag=jgwill/orpheus:testapp
 
-containername=orpheusapp
+containername=orpheustestapp
 dkhostname=$containername
 
 # PORT
@@ -16,7 +16,7 @@ dkcommand=bash #command to execute (default is the one in the dockerfile)
 ODISPLAY=1
 
 #dkextra=" -v \$dworoot/x:/x -p 2288:2288 "
-dkextra=" -v /b/Dropbox/g/practice_orpheuspy:/app "
+dkextra=" -v $(realpath $(pwd)/../..):/app "
 
 # Set DISPLAY environment variable
 # dkextra="$dkextra -e DISPLAY=172.17.0.1:0"

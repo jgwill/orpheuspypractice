@@ -26,6 +26,10 @@ RUN chmod +x *.sh
 WORKDIR /samples
 COPY samples/*.abc .
 
+WORKDIR /tests
+COPY tests/* .
+RUN chmod +x *.sh
+
 USER jgi
 WORKDIR /work
 
@@ -36,6 +40,6 @@ RUN sudo Xvfb :99 -screen 0 1024x768x16 &
 
 WORKDIR /app
 # Run the application with xvfb
-CMD ["xvfb-run", "-a", "/scripts/run.sh"]
+#CMD ["xvfb-run", "-a", "/scripts/run.sh"]
 
 
