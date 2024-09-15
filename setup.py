@@ -25,7 +25,8 @@ setup(
             "omid2score = orpheuspypractice:jgabcli_main_mid2score",
             "say_hello_orpheuspypractice = orpheuspypractice:say_hello",
             "odep = orpheuspypractice.dependency_action:main",
-            "ohfi = orpheuspypractice:jgthfcli_main"
+            "ohfi = orpheuspypractice:jgthfcli_main",
+            "wfohfi_then_oabc_foreach_json_files = orpheuspypractice:wfohfi_then_oabc_foreach_json_files",
         ]
     },
     classifiers=[
