@@ -16,5 +16,6 @@ _clean()
 _clean
 _setup && echo "Setup Ok"||echo "Setup failed"
 cp $abc_file /tmp/my.abc
+cd /tmp
 # Run the test in docker container
 oabc my.abc && echo "oabc Ok"||echo "oabc failed"

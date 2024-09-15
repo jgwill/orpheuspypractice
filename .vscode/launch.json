@@ -11,7 +11,7 @@
       "cwd": "${workspaceFolder}/src/jgcmlib",
       "program": "jgcmlib/jgabcli.py",
       "console": "integratedTerminal",
-      "args": "tests/Bov_i3.abc"
+      "args": "tests/an_ok_abc_file_for_test.abc"
     }
   ]
 }

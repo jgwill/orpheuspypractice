@@ -7,5 +7,14 @@
     "test_*.py"
   ],
   "python.testing.pytestEnabled": false,
-  "python.testing.unittestEnabled": true
+  "python.testing.unittestEnabled": true,
+  "python.analysis.exclude": [
+    "/home/jgi/anaconda3/envs/practice_orpheuspy/lib/python3.10/site-packages/jgcmlib"
+  ],
+  "python.analysis.extraPaths": [
+    "/b/Dropbox/g/practice_orpheuspy/src/jgcmlib"
+  ],
+  "python.analysis.include": [
+    "/b/Dropbox/g/practice_orpheuspy/src/jgcmlib"
+  ]
 }
