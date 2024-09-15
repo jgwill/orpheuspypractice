@@ -10,3 +10,6 @@ You can install orpheuspypractice using pip:
 pip install orpheuspypractice
 ```
 
+## Commands
+
+* oabc: Convert an ABC file to a MIDI file.

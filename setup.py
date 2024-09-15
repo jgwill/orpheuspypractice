@@ -5,7 +5,7 @@ setup(
     version='0.2.2',
     author='JGWill',
     author_email='jgi@jgwill.com',
-    description='A Practice Package to Experiment with Orpheus\'s goals',
+    description='Practice Package to Experiment with Orpheus\'s goals and its submodules',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     url='https://github.com/jgwill/orpheuspypractice',
