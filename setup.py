@@ -17,7 +17,7 @@ setup(
         "music21",
         "ipython",
         "jgcmlib>=1.0.57",
-        "jghfmanager>=0.1.1",
+        "jghfmanager>=0.1.2",
     ],
     entry_points={
         'console_scripts': [

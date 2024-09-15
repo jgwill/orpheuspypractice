@@ -4,4 +4,4 @@ requests
 music21
 ipython
 huggingface_hub
-jghfmanager
+jghfmanager>=0.1.2
