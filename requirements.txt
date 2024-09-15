@@ -3,4 +3,5 @@ tlid
 requests
 music21
 ipython
-
+huggingface_hub
+jghfmanager

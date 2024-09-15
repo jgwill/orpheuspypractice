@@ -2,6 +2,7 @@ from jgcmlib.jgabcli import main as jgabcli_main
 
 from jgcmlib.jgabcli import main_mid2score as jgabcli_main_mid2score
 
+from jghfmanager.jgthfcli import main as jgthfcli_main
 
 def say_hello():
     print("Hello, World!")
