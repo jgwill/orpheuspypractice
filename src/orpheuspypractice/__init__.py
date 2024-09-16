@@ -2,7 +2,10 @@ from jgcmlib.jgabcli import main as jgabcli_main
 
 from jgcmlib.jgabcli import main_mid2score as jgabcli_main_mid2score
 
+import jgcmlib as oabclib
+
 from jghfmanager.jgthfcli import main as jgthfcli_main
+import jghfmanager as ohflib
 
 def wfohfi_then_oabc_foreach_json_files():
     print("Run Inferences then convert to abc commands foreach json files in the current directory.")
