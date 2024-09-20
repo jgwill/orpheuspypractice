@@ -16,7 +16,7 @@ setup(
         "requests",
         "music21",
         "ipython",
-        "jgcmlib>=1.0.57",
+        "jgcmlib>=1.0.59",
         "jghfmanager>=0.1.2",
     ],
     entry_points={
