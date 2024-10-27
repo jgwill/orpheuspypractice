@@ -23,7 +23,8 @@ setup(
         'console_scripts': [
             "oabc = orpheuspypractice:jgabcli_main",
             "omid2score = orpheuspypractice:jgabcli_main_mid2score",
-            "say_hello_orpheuspypractice = orpheuspypractice:say_hello",
+            "osay_hello_orpheuspypractice = orpheuspypractice:say_hello",
+            "olca = orpheuspypractice:olca:main",
             "odep = orpheuspypractice.dependency_action:main",
             "ohfi = orpheuspypractice:jgthfcli_main",
             "wfohfi_then_oabc_foreach_json_files = orpheuspypractice:wfohfi_then_oabc_foreach_json_files",
