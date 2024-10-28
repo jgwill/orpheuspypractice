@@ -8,6 +8,7 @@ import yaml
 
 
 SYSTEM_PROMPT_APPEND="""
+You do what is above and consider the following when doing the task:
 ---
 * Create any non-existent directories.
 * create a subfolder .olca in the current directory if dont exist and :
