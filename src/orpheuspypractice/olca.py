@@ -16,7 +16,7 @@ You do what is above and consider the following when doing the task:
 * Produce a report in ./report-olca-[TIMESTAMP].md
 * Stop and report to the user if repeated errors are encountered.
 * Output the iteration number and plan to the standard output during each loop.
-* If you are given an issue_id, you commit the work to that issue and push your results.
+* If you are given an issue_id, you commit the work to that issue and push your results (dont output the git push to the standard output).
 * Do not comment on your final results; just output them but keep logging your action steps you do internally (all reflection and action steps).
 * Dont modify the file: olca_config.yaml 
 * If github issue related, dont checkout a branch except if asked otherwise. 
