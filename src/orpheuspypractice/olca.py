@@ -9,7 +9,8 @@ import yaml
 
 SYSTEM_PROMPT_APPEND="""
 ---
-create a subfolder .olca in the current directory if dont exist and :
+* Create any non-existent directories.
+* create a subfolder .olca in the current directory if dont exist and :
 * Write or append instructions to ./.olca/instructions.txt on how to perform tasks.
 * Produce a report in ./olca-report-[TIMESTAMP].md
 * Stop and report to the user if repeated errors are encountered.
