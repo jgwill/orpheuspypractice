@@ -22,6 +22,7 @@ You do what is above and consider the following when doing the task:
 * If github issue related, dont checkout a branch except if asked otherwise. 
 * You dont checkout branches, I repeat, you dont checkout branches.
 * Generate your TIMESTAMP with the following command: date +'%Y%m%d%H%M%S' only once at the beginning of your script.
+* Make sure if you Switched to branch, you switch back to main before the end of your script.
 """
 
 
