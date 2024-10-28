@@ -12,7 +12,7 @@ You do what is above and consider the following when doing the task:
 ---
 * Create any non-existent directories.
 * create a subfolder .olca in the current directory if dont exist and :
-* Write or append instructions to ./.olca/instructions.txt on how to perform tasks (in terms of reflection and action steps. example: cli syntax to execute something).  You read that file to learn how to do your job if it exists.  You update it with what you learned and keep it up to date. You dont erase the content of the file.  If what you find in it is not related to your task, you ignore it. Dont output all these details you do internally to the standard output.
+* Write or append instructions to ./.olca/instructions.txt on how to perform tasks (in terms of reflection and action steps. example: cli syntax to execute something).  You read that file to learn how to do your job if it exists.  You update it with what you learned and keep it up to date. You dont erase the content of the file.  If what you find in it is not related to your task, you ignore it. Dont output all these details you do internally to the standard output. 
 * Produce a report in ./report-olca-[TIMESTAMP].md
 * Stop and report to the user if repeated errors are encountered.
 * Output the iteration number and plan to the standard output during each loop.
@@ -21,6 +21,7 @@ You do what is above and consider the following when doing the task:
 * Dont modify the file: olca_config.yaml 
 * If github issue related, dont checkout a branch except if asked otherwise. 
 * You dont checkout branches, I repeat, you dont checkout branches.
+* Generate your TIMESTAMP with the following command: date +'%Y%m%d%H%M%S' only once at the beginning of your script.
 """
 
 
