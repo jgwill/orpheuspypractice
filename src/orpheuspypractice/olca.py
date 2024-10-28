@@ -6,6 +6,10 @@ from langchain import hub
 import argparse
 import yaml
 
+
+SYSTEM_PROMPT_APPEND=". Dont modify the file: olca_config.yaml"
+
+
 def load_config(config_file):
     with open(config_file, 'r') as file:
         config = yaml.safe_load(file)
@@ -66,7 +70,7 @@ def print_stream(stream):
 def prepare_input(user_input, system_instructions):
     inputs = {"messages": [
     ("system",
-     system_instructions),
+     system_instructions + SYSTEM_PROMPT_APPEND),
     ("user", user_input     )
     ]}
         
