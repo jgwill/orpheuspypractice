@@ -47,6 +47,7 @@ from typing import Literal
 from langchain_core.tools import tool
 
 from langgraph.prebuilt import create_react_agent
+from langgraph.errors import GraphRecursionError
 
 @tool
 def get_weather(city: Literal["nyc", "sf"]):
@@ -129,8 +130,13 @@ def main():
     
     inputs = prepare_input(user_input, system_instructions)
     
-    print_stream(graph.stream(inputs, stream_mode="values"))
-    
+
+    try:
+        print_stream(graph.stream(inputs, stream_mode="values"))
+    except GraphRecursionError as e:
+        #print(f"Error: {e}")
+        print("Recursion limit reached. Please increase the 'recursion_limit' in the olca_config.yaml file.")
+        print("For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/GRAPH_RECURSION_LIMIT")
 
 if __name__ == "__main__":
     main()
