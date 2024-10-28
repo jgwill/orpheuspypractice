@@ -12,7 +12,7 @@ You do what is above and consider the following when doing the task:
 ---
 * Create any non-existent directories.
 * create a subfolder .olca in the current directory if dont exist and :
-* Write or append instructions to ./.olca/instructions.txt on how to perform tasks.
+* Write or append instructions to ./.olca/instructions.txt on how to perform tasks (in terms of reflection and action steps. example: cli syntax to execute something).  You read that file to learn how to do your job if it exists.  You update it with what you learned and keep it up to date. You dont erase the content of the file.  If what you find in it is not related to your task, you ignore it.
 * Produce a report in ./olca-report-[TIMESTAMP].md
 * Stop and report to the user if repeated errors are encountered.
 * Output the iteration number and plan to the standard output during each loop.
