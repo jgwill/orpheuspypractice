@@ -85,15 +85,20 @@ def print_stream(stream):
         else:
             message.pretty_print()
 
-def prepare_input(user_input, system_instructions):
+def prepare_input(user_input, system_instructions,append_prompt=True):
+    appended_prompt = system_instructions + SYSTEM_PROMPT_APPEND if append_prompt else system_instructions
     inputs = {"messages": [
     ("system",
-     system_instructions + SYSTEM_PROMPT_APPEND),
+     appended_prompt),
     ("user", user_input     )
     ]}
         
     return inputs
 
+def _parse_args():
+    parser = argparse.ArgumentParser(description="Orpheus Langchain CLI Assistant")
+    parser.add_argument("-D","--disable-system-append", action="store_true", help="Disable prompt appended to system instructions")
+    return parser.parse_args()
 
 def main():
     olca_config_file = 'olca_config.yaml'
@@ -124,7 +129,8 @@ def main():
     system_instructions = config.get('system_instructions', '')
     user_input = config.get('user_input', '')
     model_name=config.get('model_name', "gpt-4o-mini")
-    recursion_limit=config.get('recursion_limit', 12)
+    recursion_limit=config.get('recursion_limit', 15)
+    disable_system_append = _parse_args().disable_system_append
     
     # Use the system_instructions and user_input in your CLI logic
     print("System Instructions:", system_instructions)
@@ -145,7 +151,7 @@ def main():
       graph.config = {}
     graph.config["recursion_limit"] = recursion_limit
     
-    inputs = prepare_input(user_input, system_instructions)
+    inputs = prepare_input(user_input, system_instructions, not disable_system_append)
     
 
     try:
