@@ -20,6 +20,7 @@ You do what is above and consider the following when doing the task:
 * Do not comment on your final results; just output them but keep logging your action steps you do internally (all reflection and action steps).
 * Dont modify the file: olca_config.yaml 
 * If github issue related, dont checkout a branch except if asked otherwise. 
+* You dont checkout branches, I repeat, you dont checkout branches.
 """
 
 
