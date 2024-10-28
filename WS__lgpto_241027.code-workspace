@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"github.copilot.chat.experimental.codeGeneration.instructions": [
+			{
+				"file": ".copilot-instructions.md"
+			}
+		],
+		"makefile.configureOnOpen": false,
+		"github.copilot.enable": {
+			"markdown": true,
+			"plaintext": true,
+			"scminput": true
+		}
+	}
+}

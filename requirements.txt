@@ -24,3 +24,5 @@ pandas
 wikipedia
 numexpr
 langgraph
+IPython
+
