@@ -77,12 +77,13 @@ def main():
     olca_config_file = 'olca_config.yaml'
     #if not os.path.exists(olca_config_file):, print an example and exit
     if not os.path.exists(olca_config_file):
-        print("Example olca_config.yaml:")
+        print("#Example olca_config.yaml:")
         print("api_keyname: 'OPENAI_API_KEY_olca'")
-        print("system_instructions: 'Hello, I am a chatbot. How can I help you today?'")
-        print("user_input: 'What is the weather in NYC?'")
         print("model_name: 'gpt-4o-mini'")
         print("recursion_limit: 12")
+        print("temperature: 0")
+        print("system_instructions: 'Hello, I am a chatbot. How can I help you today?'")
+        print("user_input: 'What is the weather in NYC?'")
         return
     config = load_config(olca_config_file)
     
