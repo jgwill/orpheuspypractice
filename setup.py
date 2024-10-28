@@ -27,7 +27,9 @@ setup(
         "langgraph",
         "wikipedia",
         "llm",
-        "pandas"
+        "pandas",
+        "langchain-experimental",
+        "langsmith"
         
     ],
     entry_points={
