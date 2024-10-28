@@ -7,7 +7,17 @@ import argparse
 import yaml
 
 
-SYSTEM_PROMPT_APPEND=". Dont modify the file: olca_config.yaml"
+SYSTEM_PROMPT_APPEND="""
+---
+create a subfolder .olca in the current directory if dont exist and :
+* Write or append instructions to ./.olca/instructions.txt on how to perform tasks.
+* Produce a report in ./olca-report-[TIMESTAMP].md
+* Stop and report to the user if repeated errors are encountered.
+* Output the iteration number and plan to the standard output during each loop.
+* If you are given an issue_id, you commit the work to that issue and push your results.
+- Do not comment on your final results; just output them but keep logging your action steps you do internally (all reflection and action steps).
+- Dont modify the file: olca_config.yaml 
+"""
 
 
 def load_config(config_file):
