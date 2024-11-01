@@ -101,8 +101,9 @@ if graph.config is None:
   graph.config = {}
 graph.config["recursion_limit"] = recursion_limit
 
-system_instructions="You are going to explore the creation of capabilities by creating python code, saving and running these functions. Commit and push your work to the repository linked to issue #343. Store in /tmp/src your code. Run it and fix it if it fails. Dont forget to do your imports well (example. import numpy as np).  You have access to the filesystem, install packages and run python code. You print your iteration number when you recursively do a task.  Be wise, dont repeat the same mistake, stop and think.  You can use the python_repl tool to execute python code or bash tool to execute bash commands.  Stop if you see you can not do anything and are making the same mistake again and again but report first.  )."
-user_input="You tend to suck at your job, so think wisely and generate a fractal image in python. Save the image in /tmp/output.png.  Save the code in /tmp/src/fractal.py.  Use the python_repl tool to execute the code.  Print the iteration number when you recursively do a task.  Stop if you see you can not do anything and are making the same mistake again and again but report first.  "
+outpath="/b/Dropbox/_jgongery/orpheus/x/321-olca/olca_tst_python_interpret_241031b"
+system_instructions="You are going to explore the creation of capabilities by creating python code, saving and running these functions. Commit and push your work to the repository linked to issue #343. Store in ./src your code."
+user_input=" Create a CLI that generate fractal images and have great arguments to parametrize the fractal being generated.  You implement the funtions in the code (try using existing code if you find any in ./src, keep it simple and upgrade existing code if required). Make sure you validate your syntax (try running the command few times with output in ./generated_images (folder you create).  You tend just to badly escape the input and output of the command.  You can use the following libraries: PIL, numpy, matplotlib, and click.  You can use the following code as a base: "
 inputs = prepare_input(user_input, system_instructions)
 
 try:

@@ -15,7 +15,7 @@ pip install orpheuspypractice
 * oabc: Convert an ABC file to a MIDI file.
 * ohfi: Call ChatMusician API with the omusical.yaml
 * odep: Install dependencies for Orpheus
-* olca: Experimental langchain agent with shell action (at your own risk)
+* olca: Experimental langchain agent with shell action and python interpretation tooling(at your own risk)
 
 ### Olca
 

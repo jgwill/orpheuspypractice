@@ -25,9 +25,44 @@ You do what is above and consider the following when doing the task:
 * You dont checkout branches, I repeat, you dont checkout branches.
 * Generate your TIMESTAMP with the following command: date +'%Y%m%d%H%M%S' only once at the beginning of your script.
 * Make sure if you Switched to branch, you switch back to main before the end of your script.
-* Try to observe that you keep doing the same thing over and over again and stop right away if you see that.
+* Try to observe that you keep doing the same thing over and over again and stop right away if you see that (dont do that if you are developping a story)
+* Be quiet with trivial output in the terminal.
+* Write your plan in ./.olca/plan.md
+----
+REMEMBER: Dont introduce nor conclude, just output results. No comments. you  present in a coherent format without preambles or fluff. Never use the word "determination".
 """
 
+HUMAN_APPEND_PROMPT="""
+* You format well when interacting with humans.
+Example: '==============================================
+[ PURPOSE OF THE MESSAGE ]
+==============================================
+[ MESSAGE CONTENT ]
+=============================================='
+[ PROMPT the user for input ] :
+"""
+def get_input() -> str:
+    print("----------------------")
+    contents = []
+    while True:
+        try:
+            line = input()
+        except EOFError:
+            break
+        if line == "q":
+            break
+        contents.append(line)
+    return "\n".join(contents)
+
+
+#try loaging .env and see if a key is there for OLCA_SYSTEM_PROMPT_APPEND
+#If it is there, use it instead of the default
+try:
+    OLCA_SYSTEM_PROMPT_APPEND = os.getenv("OLCA_SYSTEM_PROMPT_APPEND")
+    if OLCA_SYSTEM_PROMPT_APPEND is not None:
+        SYSTEM_PROMPT_APPEND = OLCA_SYSTEM_PROMPT_APPEND
+except:
+    pass
 
 def load_config(config_file):
     with open(config_file, 'r') as file:
@@ -46,7 +81,7 @@ dotenv.load_dotenv()
 
 # First we initialize the model we want to use.
 from json import load
-from langchain_openai import ChatOpenAI
+from langchain_openai import ChatOpenAI,OpenAI
 from langchain.agents import AgentExecutor, create_react_agent
 
 from langchain_community.agent_toolkits.load_tools import load_tools
@@ -85,8 +120,10 @@ def print_stream(stream):
         else:
             message.pretty_print()
 
-def prepare_input(user_input, system_instructions,append_prompt=True):
+def prepare_input(user_input, system_instructions,append_prompt=True, human=False):
     appended_prompt = system_instructions + SYSTEM_PROMPT_APPEND if append_prompt else system_instructions
+    appended_prompt = appended_prompt + HUMAN_APPEND_PROMPT if human else appended_prompt
+    
     inputs = {"messages": [
     ("system",
      appended_prompt),
@@ -96,11 +133,15 @@ def prepare_input(user_input, system_instructions,append_prompt=True):
     return inputs
 
 def _parse_args():
-    parser = argparse.ArgumentParser(description="Orpheus Langchain CLI Assistant")
+    parser = argparse.ArgumentParser(description="Orpheus Langchain CLI Assistant (very Experimental and dangerous)",epilog="For more information: https://github.com/jgwill/orpheuspypractice/wiki/olca")
     parser.add_argument("-D","--disable-system-append", action="store_true", help="Disable prompt appended to system instructions")
+    parser.add_argument("-H","--human", action="store_true", help="Human in the loop mode")
+    #--math
+    parser.add_argument("-M","--math", action="store_true", help="Enable math tool")
     return parser.parse_args()
 
 def main():
+    args = _parse_args()
     olca_config_file = 'olca_config.yaml'
     #if not os.path.exists(olca_config_file):, print an example and exit
     if not os.path.exists(olca_config_file):
@@ -109,6 +150,7 @@ def main():
         print("model_name: 'gpt-4o-mini'")
         print("recursion_limit: 12")
         print("temperature: 0")
+        print("human: true")
         print("system_instructions: 'Hello, I am a chatbot. How can I help you today?'")
         print("user_input: 'What is the weather in NYC?'")
         return
@@ -140,9 +182,31 @@ def main():
     
     
     
-    shell_tool = ShellTool()
+    
     model = ChatOpenAI(model=model_name, temperature=0)
-    tools = [get_weather, shell_tool]
+    selected_tools = [ "terminal"]
+    
+    human_switch = args.human
+    #look in olca_config.yaml for human: true
+    if "human" in config:
+        human_switch = config["human"]
+        
+    if human_switch:
+        selected_tools.append("human")
+    
+    if args.math:
+        math_llm=OpenAI()
+        selected_tools.append("llm-math")
+        if human_switch:
+            tools = load_tools(    selected_tools, llm=math_llm,   allow_dangerous_tools=True, input_func=get_input)
+        else:
+            tools = load_tools(    selected_tools, llm=math_llm,   allow_dangerous_tools=True)
+    else:
+        if human_switch:
+            tools = load_tools(    selected_tools,    allow_dangerous_tools=True, input_func=get_input)
+        else:
+            tools = load_tools(    selected_tools,    allow_dangerous_tools=True)
+    
     
     # Define the graph
     graph = create_react_agent(model, tools=tools)
@@ -151,7 +215,7 @@ def main():
       graph.config = {}
     graph.config["recursion_limit"] = recursion_limit
     
-    inputs = prepare_input(user_input, system_instructions, not disable_system_append)
+    inputs = prepare_input(user_input, system_instructions, not disable_system_append, human_switch)
     
 
     try:
