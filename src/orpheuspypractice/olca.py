@@ -6,14 +6,16 @@ from langchain import hub
 import argparse
 import yaml
 
-
+#jgwill/olca1
+#olca1_prompt = hub.pull("jgwill/olca1") #Future use
+#https://smith.langchain.com/hub/jgwill/olca1
 SYSTEM_PROMPT_APPEND="""
 You do what is above and consider the following when doing the task:
 ---
-* Create any non-existent directories.
+* Create any non-existent directories. (./reports, ./log, ./.olca)
 * create a subfolder .olca in the current directory if dont exist and :
 * Write or append instructions to ./.olca/instructions.txt on how to perform tasks (in terms of reflection and action steps. example: cli syntax to execute something).  You read that file to learn how to do your job if it exists.  You update it with what you learned and keep it up to date. You dont erase the content of the file.  If what you find in it is not related to your task, you ignore it. Dont output all these details you do internally to the standard output. 
-* Produce a report in ./report-olca-[TIMESTAMP].md
+* Produce a report in ./reports/report-olca-[TIMESTAMP].md
 * Stop and report to the user if repeated errors are encountered.
 * Output the iteration number and plan to the standard output during each loop.
 * If you are given an issue_id, you commit the work to that issue and push your results (dont output the git push to the standard output).
@@ -56,8 +58,7 @@ import warnings
 warnings.filterwarnings("ignore", category=UserWarning, message="The shell tool has no safeguards by default. Use at your own risk.")
 
 from langchain_community.tools.shell import ShellTool
-
-
+from langchain_community.utilities import python 
 
 from typing import Literal
 
@@ -141,8 +142,9 @@ def main():
     
     
     shell_tool = ShellTool()
+    python_tool = python()
     model = ChatOpenAI(model=model_name, temperature=0)
-    tools = [get_weather, shell_tool]
+    tools = [get_weather, shell_tool, python_tool]
     
     # Define the graph
     graph = create_react_agent(model, tools=tools)
@@ -155,6 +157,7 @@ def main():
     
 
     try:
+        os.makedirs('.olca', exist_ok=True)
         print_stream(graph.stream(inputs, stream_mode="values"))
     except GraphRecursionError as e:
         #print(f"Error: {e}")
