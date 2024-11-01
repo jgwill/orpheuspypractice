@@ -58,7 +58,6 @@ import warnings
 warnings.filterwarnings("ignore", category=UserWarning, message="The shell tool has no safeguards by default. Use at your own risk.")
 
 from langchain_community.tools.shell import ShellTool
-from langchain_community.utilities import python 
 
 from typing import Literal
 
@@ -142,9 +141,8 @@ def main():
     
     
     shell_tool = ShellTool()
-    python_tool = python()
     model = ChatOpenAI(model=model_name, temperature=0)
-    tools = [get_weather, shell_tool, python_tool]
+    tools = [get_weather, shell_tool]
     
     # Define the graph
     graph = create_react_agent(model, tools=tools)
