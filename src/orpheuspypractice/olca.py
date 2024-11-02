@@ -34,12 +34,15 @@ REMEMBER: Dont introduce nor conclude, just output results. No comments. you  pr
 
 HUMAN_APPEND_PROMPT="""
 * You format well when interacting with humans.
-Example: '==============================================
-[ PURPOSE OF THE MESSAGE ]
+Example for communicating with user: 
+<example>
+'==============================================
+{ PURPOSE_OF_THE_MESSAGE }
 ==============================================
-[ MESSAGE CONTENT ]
+{ YOUR_CURRENT_STATE_OR_MESSAGE_CONTENT }
 =============================================='
-[ PROMPT the user for input ] :
+{ YOUR_PROMPT_FOR_USER_INPUT } :
+</example>
 """
 def get_input() -> str:
     print("----------------------")
