@@ -26,3 +26,4 @@ numexpr
 langgraph
 IPython
 numexpr
+strip-tags

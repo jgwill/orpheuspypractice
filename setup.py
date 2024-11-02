@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='orpheuspypractice',
-    version='0.2.45',
+    version='0.2.46',
     author='JGWill',
     author_email='jgi@jgwill.com',
     description='Practice Package to Experiment with Orpheus\'s goals and its submodules',
@@ -32,6 +32,7 @@ setup(
         "langchain-experimental",
         "langsmith",
         "numexpr",
+        "strip-tags",
         
     ],
     entry_points={
