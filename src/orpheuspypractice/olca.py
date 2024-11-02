@@ -33,8 +33,9 @@ REMEMBER: Dont introduce nor conclude, just output results. No comments. you  pr
 """
 
 HUMAN_APPEND_PROMPT="""
+* Use the 'human' tool to interact and do as you are told.
 * You format well when interacting with humans.
-Example for communicating with user: 
+Example for communicating with user:  (THIS IS A TEMPLATE, DONT OUTPUT THIS AS IS)
 <example>
 '==============================================
 { PURPOSE_OF_THE_MESSAGE }
@@ -169,7 +170,22 @@ def main():
         #print(api_key_lcpractices2409)
         os.environ[api_key_variable] = api_key_lcpractices2409
     except :
-        pass
+        #load .env file in current dir or HOME and find OPENAI_API_KEY
+        try:
+            dotenv.load_dotenv()
+        except:
+            #load in HOME
+            try:
+                dotenv.load_dotenv(dotenv.find_dotenv(usecwd=False))
+            except:
+                print("Error: Could not load .env file")
+                exit(1)
+
+
+       
+
+        
+        
     
     system_instructions = config.get('system_instructions', '')
     user_input = config.get('user_input', '')
