@@ -28,6 +28,7 @@ You do what is above and consider the following when doing the task:
 * Try to observe that you keep doing the same thing over and over again and stop right away if you see that (dont do that if you are developping a story)
 * Be quiet with trivial output in the terminal.
 * Write your plan in ./.olca/plan.md
+* You watch out for basic syntax errors with your args when executing echo commands. (example: Syntax error: Unterminated quoted string)
 ----
 REMEMBER: Dont introduce nor conclude, just output results. No comments. you  present in a coherent format without preambles or fluff. Never use the word "determination".
 """
