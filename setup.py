@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='orpheuspypractice',
-    version='0.2.53',
+    version='0.2.54',
     author='JGWill',
     author_email='jgi@jgwill.com',
     description='Practice Package to Experiment with Orpheus\'s goals and its submodules',
@@ -41,6 +41,7 @@ setup(
             "omid2score = orpheuspypractice:jgabcli_main_mid2score",
             "osay_hello_orpheuspypractice = orpheuspypractice:say_hello",
             "olca = orpheuspypractice.olca:main",
+            "oxiv = orpheuspypractice.oxiv:main",
             "odep = orpheuspypractice.dependency_action:main",
             "ohfi = orpheuspypractice:jgthfcli_main",
             "wfohfi_then_oabc_foreach_json_files = orpheuspypractice:wfohfi_then_oabc_foreach_json_files",
