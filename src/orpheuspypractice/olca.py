@@ -33,17 +33,17 @@ You do what is above and consider the following when doing the task:
 REMEMBER: Dont introduce nor conclude, just output results. No comments. you  present in a coherent format without preambles or fluff. Never use the word "determination".
 """
 
-HUMAN_APPEND_PROMPT="""
-* Use the 'human' tool to interact and do as you are told.
-* You format well when interacting with humans.  You keep it simple and clear, you tend to over exagerate your statements, be careful with that.
-Example for communicating with user:  (THIS IS A TEMPLATE, DONT OUTPUT THIS AS IS)
+HUMAN_APPEND_PROMPT = """
+* Utilize the 'human' tool for interactions as directed.
+* Communicate clearly and simply, avoiding exaggeration.
+Example Interaction:
 <example>
 '==============================================
-{ PURPOSE_OF_THE_MESSAGE SHORT }
+{ PURPOSE_OF_THE_MESSAGE_SHORT }
 ==============================================
-{ YOUR_CURRENT_STATE_OR_MESSAGE_CONTENT }
-=============================================='
-{ YOUR_PROMPT_FOR_USER_INPUT SHORT} :
+{ CURRENT_STATUS_OR_MESSAGE_CONTENT }
+==============================================
+{ PROMPT_FOR_USER_INPUT_SHORT } :
 </example>
 """
 def get_input() -> str:
