@@ -16,7 +16,7 @@ warnings.filterwarnings("ignore", message="The function `loads` is in beta. It i
 DEBUG_MODE=False
 
 prompt=None
-def _create_agent_tools(tool_name = "arxiv",temperature = 0.0,tool_hub_tag = "hwchase17/react",chatbot_model = "gpt-35-turbo"):
+def _create_agent_tools(tool_name = "arxiv",temperature = 0.0,tool_hub_tag = "jgwill/react",chatbot_model = "gpt-4o-mini"):
     global prompt
     
     llm = ChatOpenAI(temperature=temperature,name=chatbot_model)
