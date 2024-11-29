@@ -137,18 +137,29 @@ def prepare_input(user_input, system_instructions,append_prompt=True, human=Fals
     return inputs
 
 def _parse_args():
-    parser = argparse.ArgumentParser(description="Orpheus Langchain CLI Assistant (very Experimental and dangerous)",epilog="For more information: https://github.com/jgwill/orpheuspypractice/wiki/olca")
-    parser.add_argument("-D","--disable-system-append", action="store_true", help="Disable prompt appended to system instructions")
-    parser.add_argument("-H","--human", action="store_true", help="Human in the loop mode")
-    #--math
-    parser.add_argument("-M","--math", action="store_true", help="Enable math tool")
-    parser.add_argument("-T","--trace", action="store_true", help="Enable tracing")
+    parser = argparse.ArgumentParser(description="Orpheus Langchain CLI Assistant (very Experimental and dangerous)", epilog="For more information: https://github.com/jgwill/orpheuspypractice/wiki/olca")
+    parser.add_argument("-D", "--disable-system-append", action="store_true", help="Disable prompt appended to system instructions")
+    parser.add_argument("-H", "--human", action="store_true", help="Human in the loop mode")
+    parser.add_argument("-M", "--math", action="store_true", help="Enable math tool")
+    parser.add_argument("-T", "--tracing", action="store_true", help="Enable tracing")
+    parser.add_argument("init", nargs='?', help="Initialize olca interactive mode")
+    parser.add_argument("-y", "--yes", action="store_true", help="Accept the new file olca.yml")
     return parser.parse_args()
 
 def main():
     args = _parse_args()
     olca_config_file = 'olca_config.yaml'
     olca_new_config_file = 'olca.yml'
+    
+    if args.init:
+        if os.path.exists(olca_new_config_file) or os.path.exists(olca_config_file):
+            print("Error: Configuration file already exists. Cannot run 'olca init'.")
+            return
+        if args.yes:
+            olca_config_file = olca_new_config_file
+        else:
+            generate_config_example()
+            return
     
     if os.path.exists(olca_new_config_file):
         olca_config_file = olca_new_config_file
@@ -161,7 +172,7 @@ def main():
     config = load_config(olca_config_file)
     
     # Check for tracing flag in config and CLI
-    tracing_enabled = config.get('tracing', False) or args.trace
+    tracing_enabled = config.get('tracing', False) or args.tracing
     if tracing_enabled:
         os.environ["LANGCHAIN_TRACING_V2"] = "true"
         if not os.getenv("LANGCHAIN_API_KEY"):
@@ -254,15 +265,19 @@ def main():
         print("For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/GRAPH_RECURSION_LIMIT")
 
 def generate_config_example():
-    print("#Example olca.yml:")
-    print("api_keyname: 'OPENAI_API_KEY_olca'")
-    print("model_name: 'gpt-4o-mini'")
-    print("recursion_limit: 12")
-    print("temperature: 0")
-    print("human: true")
-    print("tracing: true")
-    print("system_instructions: 'Hello, I am a chatbot. How can I help you today?'")
-    print("user_input: 'What is the weather in NYC?'")
+    config = {
+        "api_keyname": input("api_keyname [OPENAI_API_KEY_olca]: ") or "OPENAI_API_KEY_olca",
+        "model_name": input("model_name [gpt-4o-mini]: ") or "gpt-4o-mini",
+        "recursion_limit": int(input("recursion_limit [12]: ") or 12),
+        "temperature": float(input("temperature [0]: ") or 0),
+        "human": input("human [true]: ").lower() in ["true", "yes", "y", "1", ""] or True,
+        "tracing": input("tracing [true]: ").lower() in ["true", "yes", "y", "1", ""] or True,
+        "system_instructions": input("system_instructions [Hello, I am a chatbot. How can I help you today?]: ") or "Hello, I am a chatbot. How can I help you today?",
+        "user_input": input("user_input [What is the weather in NYC?]: ") or "What is the weather in NYC?"
+    }
+    with open('olca.yml', 'w') as file:
+        yaml.dump(config, file)
+    print("Configuration file 'olca.yml' created successfully.")
 
 if __name__ == "__main__":
     main()
