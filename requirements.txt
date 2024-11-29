@@ -27,3 +27,5 @@ langgraph
 IPython
 numexpr
 strip-tags
+jaraco.context
+jaraco.functools
