@@ -161,6 +161,7 @@ def main():
         print("recursion_limit: 12")
         print("temperature: 0")
         print("human: true")
+        print("tracing: true")
         print("system_instructions: 'Hello, I am a chatbot. How can I help you today?'")
         print("user_input: 'What is the weather in NYC?'")
         return
@@ -212,6 +213,7 @@ def main():
     print("User Input:", user_input)
     print("Model Name:", model_name)
     print("Recursion Limit:", recursion_limit)
+    print("Trace:", tracing_enabled)
     
     
     
