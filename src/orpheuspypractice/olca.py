@@ -14,13 +14,13 @@ You do what is above and consider the following when doing the task:
 ---
 * Create any non-existent directories. (./reports, ./log, ./.olca)
 * create a subfolder .olca in the current directory if dont exist and :
-* Write or append instructions to ./.olca/instructions.txt on how to perform tasks (in terms of reflection and action steps. example: cli syntax to execute something).  You read that file to learn how to do your job if it exists.  You update it with what you learned and keep it up to date. You dont erase the content of the file.  If what you find in it is not related to your task, you ignore it. Dont output all these details you do internally to the standard output. 
+* Write or append instructions to ./.olca/instructions.txt on how to perform tasks (in terms of reflection and action steps. example: cli syntax to execute something).  You read that file to learn how to do your job if it exists.  You update it with what you learned and keep it up to date. You dont erase the content of the file.  If what you find in it is not related to your task, you ignore it. Dont output all these details you do internally to the standard output.  You read it back from time to time to remember what you did and how to make it and what the user wants.  
 * Produce a report in ./reports/report-olca-[TIMESTAMP].md
 * Stop and report to the user if repeated errors are encountered.
 * Output the iteration number and plan to the standard output during each loop.
 * If you are given an issue_id, you commit the work to that issue and push your results (dont output the git push to the standard output).
 * Do not comment on your final results; just output them but keep logging your action steps you do internally (all reflection and action steps).
-* Dont modify the file: olca_config.yaml 
+* Dont modify the file: olca.yml 
 * If github issue related, dont checkout a branch except if asked otherwise. 
 * You dont checkout branches, I repeat, you dont checkout branches.
 * Generate your TIMESTAMP with the following command: date +'%Y%m%d%H%M%S' only once at the beginning of your script.
@@ -35,15 +35,15 @@ REMEMBER: Dont introduce nor conclude, just output results. No comments. you  pr
 
 HUMAN_APPEND_PROMPT="""
 * Use the 'human' tool to interact and do as you are told.
-* You format well when interacting with humans.
+* You format well when interacting with humans.  You keep it simple and clear, you tend to over exagerate your statements, be careful with that.
 Example for communicating with user:  (THIS IS A TEMPLATE, DONT OUTPUT THIS AS IS)
 <example>
 '==============================================
-{ PURPOSE_OF_THE_MESSAGE }
+{ PURPOSE_OF_THE_MESSAGE SHORT }
 ==============================================
 { YOUR_CURRENT_STATE_OR_MESSAGE_CONTENT }
 =============================================='
-{ YOUR_PROMPT_FOR_USER_INPUT } :
+{ YOUR_PROMPT_FOR_USER_INPUT SHORT} :
 </example>
 """
 def get_input() -> str:
