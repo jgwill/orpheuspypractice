@@ -142,6 +142,7 @@ def _parse_args():
     parser.add_argument("-H","--human", action="store_true", help="Human in the loop mode")
     #--math
     parser.add_argument("-M","--math", action="store_true", help="Enable math tool")
+    parser.add_argument("-T","--trace", action="store_true", help="Enable tracing")
     return parser.parse_args()
 
 def main():
@@ -160,6 +161,13 @@ def main():
         return
     config = load_config(olca_config_file)
     
+    # Check for tracing flag in config and CLI
+    tracing_enabled = config.get('tracing', False) or args.trace
+    if tracing_enabled:
+        os.environ["LANGCHAIN_TRACING_V2"] = "true"
+        if not os.getenv("LANGCHAIN_API_KEY"):
+            print("Error: LANGCHAIN_API_KEY environment variable is required for tracing. Please set it up.")
+            exit(1)
     
     try:
             
