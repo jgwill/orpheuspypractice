@@ -155,15 +155,7 @@ def main():
     elif os.path.exists(olca_config_file):
         print("Warning: 'olca_config.yaml' is deprecated. Please use 'olca.yml' instead.")
     else:
-        print("#Example olca.yml:")
-        print("api_keyname: 'OPENAI_API_KEY_olca'")
-        print("model_name: 'gpt-4o-mini'")
-        print("recursion_limit: 12")
-        print("temperature: 0")
-        print("human: true")
-        print("tracing: true")
-        print("system_instructions: 'Hello, I am a chatbot. How can I help you today?'")
-        print("user_input: 'What is the weather in NYC?'")
+        generate_config_example()
         return
 
     config = load_config(olca_config_file)
@@ -260,6 +252,17 @@ def main():
         #print(f"Error: {e}")
         print("Recursion limit reached. Please increase the 'recursion_limit' in the olca_config.yaml file.")
         print("For troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/GRAPH_RECURSION_LIMIT")
+
+def generate_config_example():
+    print("#Example olca.yml:")
+    print("api_keyname: 'OPENAI_API_KEY_olca'")
+    print("model_name: 'gpt-4o-mini'")
+    print("recursion_limit: 12")
+    print("temperature: 0")
+    print("human: true")
+    print("tracing: true")
+    print("system_instructions: 'Hello, I am a chatbot. How can I help you today?'")
+    print("user_input: 'What is the weather in NYC?'")
 
 if __name__ == "__main__":
     main()
