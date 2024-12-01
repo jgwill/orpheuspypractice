@@ -137,8 +137,11 @@ def prepare_input(user_input, system_instructions,append_prompt=True, human=Fals
         
     return inputs
 
+OLCA_DESCRIPTION = "OlCA (Orpheus Langchain CLI Assistant) (very Experimental and dangerous)"
+OLCA_EPILOG = "For more information: https://github.com/jgwill/orpheuspypractice/wiki/olca"
+OLCA_USAGE="olca [-D] [-H] [-M] [-T] [init] [-y]"
 def _parse_args():
-    parser = argparse.ArgumentParser(description="Orpheus Langchain CLI Assistant (very Experimental and dangerous)", epilog="For more information: https://github.com/jgwill/orpheuspypractice/wiki/olca")
+    parser = argparse.ArgumentParser(description=OLCA_DESCRIPTION, epilog=OLCA_EPILOG,usage=OLCA_USAGE)
     parser.add_argument("-D", "--disable-system-append", action="store_true", help="Disable prompt appended to system instructions")
     parser.add_argument("-H", "--human", action="store_true", help="Human in the loop mode")
     parser.add_argument("-M", "--math", action="store_true", help="Enable math tool")
