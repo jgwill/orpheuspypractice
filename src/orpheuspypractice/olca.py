@@ -180,7 +180,7 @@ def main():
     if tracing_enabled:
         os.environ["LANGCHAIN_TRACING_V2"] = "true"
         if not os.getenv("LANGCHAIN_API_KEY"):
-            print("Error: LANGCHAIN_API_KEY environment variable is required for tracing. Please set it up.")
+            print("Error: LANGCHAIN_API_KEY environment variable is required for tracing. Please set it up at : https://smith.langchain.com/settings")
             exit(1)
     
     try:
