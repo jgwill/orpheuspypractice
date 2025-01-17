@@ -111,30 +111,32 @@ def main():
     o["output"]=resp
     serialize_response_to_json_file(o, outfile)
     serialize_response_to_markdown_file(o, outfile.replace(".json",".md"))
-    print("==================================")
-    print(input_request)
-    print("============RESPONSE============")
-    print(resp)
-    print("==================================")
-    print("=============INPUT Request=====================")
-    print(input_request)
-    print("==================================")
-    print("============OUTPUT============")
+    VERBOSE_RESULT=False
+    if VERBOSE_RESULT:
+        print("==================================")
+        print(input_request)
+        print("============RESPONSE============")
+        print(resp)
+        print("==================================")
+        print("=============INPUT Request=====================")
+        print(input_request)
+        print("==================================")
+        print("============OUTPUT============")
     output=resp["output"]
     print(output)
 
 def parse_cli_arguments():
     parser = argparse.ArgumentParser(description='Process Input request for pattern search.')
-    parser.add_argument('--input', type=str,
+    parser.add_argument('-I','--input', type=str,
                         help='an input request for the searched article')
     ##--hub_tag
-    parser.add_argument('-ht','--hub_tag', type=str,
+    parser.add_argument('-H','-ht','--hub_tag', type=str,
                         help='The hub tag for the process',default="jgwill/react")
     #--chatbot_model
-    parser.add_argument('-m','--chatbot_model', type=str,
+    parser.add_argument('-M','-m','--chatbot_model', type=str,
                         help='a chatbot model for the processing',default="gpt-4o-mini")
     #--prefix
-    parser.add_argument('-p','--prefix', type=str,
+    parser.add_argument('-P','-p','--prefix', type=str,
                         help='a file prefix for output',default="arxiv-")
     args = parser.parse_args()
     return args
