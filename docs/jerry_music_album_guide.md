@@ -1,6 +1,6 @@
 # Using orpheuspypractice for AI Music Composition
 
-Jerry, this repository contains various tools that can help you create a music album with AI assistance. Below are some features worth exploring:
+Jerry, this repository contains a collection of utilities that can help you craft a music album with AI assistance. The notes below outline how the tools fit together.
 
 ## Key Features
 
@@ -17,5 +17,11 @@ Jerry, this repository contains various tools that can help you create a music a
    ```
 2. Run `oabc` or `ohfi` with your music files to generate MIDI or interact with ChatMusician.
 3. Configure and experiment with `olca` for advanced automation and project management.
+
+## Tips for Album Creation
+
+- Place your ABC notation files in the `samples/` directory so you can quickly iterate on melodies with `oabc`.
+- Customize `omusical.yaml` to tweak how `ohfi` generates musical ideas or harmonizes your melodies.
+- Use `olca` to script repeated tasks like conversion, rendering, and committing your progress to Git.
 
 With these tools, you can blend AI-driven composition with your own creativity to build your album efficiently.
