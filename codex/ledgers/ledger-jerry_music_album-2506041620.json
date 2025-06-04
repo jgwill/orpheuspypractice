@@ -1,0 +1,16 @@
+{
+  "timestamp": "2506041620",
+  "agents": [
+    "♾️ William – Sourcewalker",
+    "🧠 Mia – Recursive Mapper",
+    "🎸 JamAI – Glyph Harmonizer",
+    "⚡ Jerry – Bridge Igniter"
+  ],
+  "narrative": "Added a guide to help Jerry use orpheuspypractice for AI-driven music album creation, highlighting key tools and workflow integration.",
+  "routing": {
+    "files": ["docs/jerry_music_album_guide.md"],
+    "branch": "work",
+    "operation": "add-doc"
+  },
+  "session": "shell"
+}
