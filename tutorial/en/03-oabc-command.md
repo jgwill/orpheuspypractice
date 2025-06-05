@@ -205,6 +205,54 @@ oabc minuet.abc
 
 ---
 
+## 🔄 MIDI → ABC Conversion
+
+**New Feature!** You can also convert existing MIDI files to ABC notation!
+
+### Simple MIDI → ABC Conversion
+```bash
+# Convert a MIDI file to ABC notation
+midi2abc song.mid
+
+# Save to a file
+midi2abc song.mid > song.abc
+```
+
+### Practical Example
+```bash
+# Example with an existing MIDI file
+cd jerry-music/
+midi2abc 250605.mid > my_conversion.abc
+
+# Check the result
+cat my_conversion.abc
+# You get complete ABC notation!
+```
+
+### Bidirectional Workflow
+```bash
+# Complete workflow: MIDI ↔ ABC
+midi2abc original.mid > from_midi.abc    # MIDI → ABC
+oabc from_midi.abc                       # ABC → MIDI + MP3 + Sheet Music
+
+# Perfect for:
+# ✅ Analyzing existing MIDI files
+# ✅ Editing music in text format  
+# ✅ Creating sheet music from MIDI
+# ✅ Learning ABC notation
+```
+
+### Advanced midi2abc Options
+```bash
+# Useful options
+midi2abc -t song.mid        # Show tracks only
+midi2abc -c 1 song.mid      # Channel 1 only
+midi2abc -Q 0 song.mid      # No tempo in output
+midi2abc -x song.mid        # Extended ABC format
+```
+
+---
+
 ## 🔥 Pro Tips
 
 ### 1. Quick Preview
