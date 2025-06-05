@@ -17,13 +17,25 @@
 pip install orpheuspypractice
 ```
 
-### 2. Tester l'Installation
+### 2. Installer les Dépendances Essentielles
+```bash
+# IMPORTANT: Installer abc2midi pour la conversion MIDI
+odep install_abc2midi
+
+# Optionnel: Installer MuseScore pour les partitions
+odep install_musescore
+```
+
+### 3. Tester l'Installation
 ```bash
 # Vérifier que tout fonctionne
 oabc --help
+
+# Vérifier que abc2midi est installé
+abc2midi
 ```
 
-### 3. Créer Votre Première Chanson
+### 4. Créer Votre Première Chanson
 Créez un fichier appelé `ma_chanson.abc` :
 ```abc
 X:1
@@ -35,7 +47,7 @@ K:C
 |: C2 D2 E2 F2 | G2 A2 B2 c2 | c2 B2 A2 G2 | F2 E2 D2 C2 :|
 ```
 
-### 4. Convertir en Tout !
+### 5. Convertir en Tout !
 ```bash
 # Une commande magique qui crée MIDI + MP3 + Partition
 oabc ma_chanson.abc
@@ -44,6 +56,18 @@ oabc ma_chanson.abc
 # ma_chanson.mid  ← Fichier MIDI pour instruments
 # ma_chanson.mp3  ← Audio pour partager
 # ma_chanson.svg  ← Belle partition musicale
+# ma_chanson.jpg  ← Image de la partition
+```
+
+### 🎯 Exemples Prêts à Utiliser
+Si vous préférez tester avec des fichiers existants :
+```bash
+# Utiliser les exemples du dossier samples/
+oabc samples/Bov_i3.abc
+
+# Ou les fichiers de test dans jerry_tuto/
+cd tutorial/jerry_tuto
+oabc ma_chanson.abc
 ```
 
 ---
@@ -53,6 +77,7 @@ oabc ma_chanson.abc
 | Commande | Ce qu'elle fait | Sortie |
 |----------|----------------|---------|
 | `oabc` | Convertir ABC → Tout | MIDI + MP3 + Partition |
+| `midi2abc` | Convertir MIDI → ABC | Notation ABC éditable |
 | `olca` | Assistant Musical IA | Aide composition interactive |
 | `ohfi` | Génération Musicale IA | Générer nouvelles mélodies |
 | `odep` | Installer Dépendances | Configurer outils musicaux |
@@ -119,9 +144,26 @@ K:A
 | Problème | Solution |
 |----------|----------|
 | Commande introuvable | `pip install orpheuspypractice` |
+| Erreur "abc2midi returned non-zero exit status" | `odep install_abc2midi` puis retester |
 | Pas de sortie audio | `odep install_musescore` |
 | Dépendances manquantes | Exécuter `odep install_abc2midi` |
+| Fichier ABC introuvable | Vérifier le chemin ou utiliser `cd tutorial/jerry_tuto` |
 | Problèmes Docker | Vérifier que Docker fonctionne |
+
+### 🔧 Diagnostic Rapide
+```bash
+# Si vous obtenez une erreur, vérifiez d'abord :
+abc2midi        # Doit afficher l'aide de abc2midi
+ls ma_chanson.abc  # Doit trouver le fichier
+pwd             # Vérifiez que vous êtes dans le bon répertoire
+
+# Si abc2midi n'est pas trouvé :
+odep install_abc2midi
+
+# Si le fichier ABC n'est pas trouvé :
+cd tutorial/jerry_tuto
+oabc ma_chanson.abc
+```
 
 ---
 
@@ -136,3 +178,29 @@ K:A
 ---
 
 *💡 Ce n'est que le début ! OrpheusPyPractice peut faire beaucoup plus - explorez les autres tutoriels pour débloquer tout son potentiel !*
+
+---
+
+### Vous Avez des Fichiers MIDI ?
+```bash
+# Convertir MIDI en notation ABC éditable
+midi2abc chanson.mid > chanson.abc
+
+# Puis créer partitions et audio
+oabc chanson.abc
+
+# Workflow complet : MIDI → ABC → Tout !
+```
+
+### Exemple avec Fichiers Existants
+```bash
+# Utiliser les fichiers MIDI du dossier jerry-music/
+cd ../jerry-music/
+midi2abc 250605.mid > ma_melodie.abc
+
+# Vérifier le résultat
+cat ma_melodie.abc
+
+# Reconvertir avec toutes les sorties
+oabc ma_melodie.abc
+```
