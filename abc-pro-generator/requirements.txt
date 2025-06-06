@@ -1,0 +1,24 @@
+# ABC Pro Generator - Core Requirements
+# Minimal dependencies for musical and storytelling assistance
+
+# Core Python packages
+click>=8.0.0
+rich>=13.0.0
+pydantic>=2.0.0
+pyyaml>=6.0
+
+# AI/LLM integration
+langchain>=0.1.0
+openai>=1.0.0
+
+# Music processing
+mido>=1.2.10
+
+# File processing
+pathlib2>=2.3.7
+python-dateutil>=2.8.0
+
+# Optional: Advanced features
+# anthropic>=0.7.0
+# music21>=8.1.0
+# librosa>=0.10.0
