@@ -78,7 +78,7 @@ oabc ma_chanson.abc
 |---------|-------------|---------|
 | `oabc` | Convert ABC → Everything | MIDI + MP3 + Sheet Music |
 | `midi2abc` | Convert MIDI → ABC | Editable ABC notation |
-| `olca` | AI Music Assistant | Interactive composition help |
+| `olca` | Agent musical AI| AI music composition assistant |
 | `ohfi` | AI Music Generation | Generate new melodies |
 | `odep` | Install Dependencies | Setup musical tools |
 
