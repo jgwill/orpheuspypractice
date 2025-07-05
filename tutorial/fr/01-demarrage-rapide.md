@@ -77,7 +77,6 @@ oabc ma_chanson.abc
 | Commande | Ce qu'elle fait | Sortie |
 |----------|----------------|---------|
 | `oabc` | Convertir ABC → Tout | MIDI + MP3 + Partition |
-| `midi2abc` | Convertir MIDI → ABC | Notation ABC éditable |
 | `olca` | Assistant Musical IA | Aide composition interactive |
 | `ohfi` | Génération Musicale IA | Générer nouvelles mélodies |
 | `odep` | Installer Dépendances | Configurer outils musicaux |
@@ -178,29 +177,3 @@ oabc ma_chanson.abc
 ---
 
 *💡 Ce n'est que le début ! OrpheusPyPractice peut faire beaucoup plus - explorez les autres tutoriels pour débloquer tout son potentiel !*
-
----
-
-### Vous Avez des Fichiers MIDI ?
-```bash
-# Convertir MIDI en notation ABC éditable
-midi2abc chanson.mid > chanson.abc
-
-# Puis créer partitions et audio
-oabc chanson.abc
-
-# Workflow complet : MIDI → ABC → Tout !
-```
-
-### Exemple avec Fichiers Existants
-```bash
-# Utiliser les fichiers MIDI du dossier jerry-music/
-cd ../jerry-music/
-midi2abc 250605.mid > ma_melodie.abc
-
-# Vérifier le résultat
-cat ma_melodie.abc
-
-# Reconvertir avec toutes les sorties
-oabc ma_melodie.abc
-```

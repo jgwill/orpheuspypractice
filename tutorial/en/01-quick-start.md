@@ -77,8 +77,7 @@ oabc ma_chanson.abc
 | Command | What it does | Output |
 |---------|-------------|---------|
 | `oabc` | Convert ABC → Everything | MIDI + MP3 + Sheet Music |
-| `midi2abc` | Convert MIDI → ABC | Editable ABC notation |
-| `olca` | Agent musical AI| AI music composition assistant |
+| `olca` | AI Music Assistant | Interactive composition help |
 | `ohfi` | AI Music Generation | Generate new melodies |
 | `odep` | Install Dependencies | Setup musical tools |
 
@@ -178,31 +177,3 @@ oabc ma_chanson.abc
 ---
 
 *💡 This is just the beginning! OrpheusPyPractice can do much more - explore the other tutorials to unlock its full potential!*
-
----
-
-## 🎹 MIDI to ABC Conversion
-
-### Have MIDI Files?
-```bash
-# Convert MIDI to editable ABC notation
-midi2abc song.mid > song.abc
-
-# Then create sheet music and audio
-oabc song.abc
-
-# Complete workflow: MIDI → ABC → Everything!
-```
-
-### Example with Existing Files
-```bash
-# Use MIDI files from jerry-music/ folder
-cd ../jerry-music/
-midi2abc 250605.mid > my_melody.abc
-
-# Check the result
-cat my_melody.abc
-
-# Convert back with all outputs
-oabc my_melody.abc
-```

@@ -8,8 +8,7 @@
 
 OrpheusPyPractice transforms the way composers work by providing:
 
-- **🎵 ABC ↔ MIDI Conversion**: Convert ABC notation to MIDI, MP3, and sheet music instantly - **and vice versa!**
-- **🎼 MIDI Analysis**: Convert existing MIDI files back to editable ABC notation
+- **🎵 ABC → Everything**: Convert ABC notation to MIDI, MP3, and sheet music instantly
 - **🤖 AI Musical Assistant**: Compose, analyze, and improve your music with artificial intelligence
 - **🐋 Professional Workflows**: Docker-based environments for consistent, reproducible results
 - **🔧 Complete Toolchain**: From notation to production-ready audio files
@@ -24,8 +23,7 @@ OrpheusPyPractice transforms the way composers work by providing:
 1. **[Quick Start Guide](en/01-quick-start.md)** - Get up and running in 5 minutes
 2. **[ABC Notation Mastery](en/02-abc-notation.md)** - Complete guide to ABC music notation
 3. **[OABC Command Deep Dive](en/03-oabc-command.md)** - Master the main conversion tool
-4. **[MIDI ↔ ABC Conversion](en/07-midi-abc-conversion.md)** - **NEW!** Bidirectional MIDI and ABC conversion
-5. **[OLCA AI Assistant](en/04-olca-ai-assistant.md)** - Leverage AI for music composition
+4. **[OLCA AI Assistant](en/04-olca-ai-assistant.md)** - Leverage AI for music composition
 5. **[Docker Professional Setup](en/05-docker-setup.md)** - Professional development environment
 6. **[Advanced Workflows](en/06-advanced-workflows.md)** - Complex musical workflows and automation
 7. **[AI Storytelling with Music](en/07-ai-storytelling.md)** - Create musical narratives
@@ -36,8 +34,7 @@ OrpheusPyPractice transforms the way composers work by providing:
 1. **[Démarrage Rapide](fr/01-demarrage-rapide.md)** - Lancez-vous en 5 minutes
 2. **[Maîtrise de la Notation ABC](fr/02-notation-abc.md)** - Guide complet de la notation musicale ABC
 3. **[Commande OABC Approfondie](fr/03-commande-oabc.md)** - Maîtrisez l'outil de conversion principal
-4. **[Conversion MIDI ↔ ABC](fr/07-midi-abc-conversion.md)** - **NOUVEAU !** Conversion bidirectionnelle MIDI et ABC
-5. **[Assistant IA OLCA](fr/04-assistant-ia-olca.md)** - Exploitez l'IA pour la composition musicale
+4. **[Assistant IA OLCA](fr/04-assistant-ia-olca.md)** - Exploitez l'IA pour la composition musicale
 5. **[Configuration Docker Professionnelle](fr/05-configuration-docker.md)** - Environnement de développement professionnel
 6. **[Workflows Avancés](fr/06-workflows-avances.md)** - Workflows musicaux complexes et automatisation
 7. **[IA et Narration Musicale](fr/07-narration-ia.md)** - Créez des récits musicaux interactifs

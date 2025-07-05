@@ -33,54 +33,6 @@ odep install_imagemagick
 
 ---
 
-## 🔄 Conversion MIDI → ABC
-
-**Nouveau !** Vous pouvez aussi convertir des fichiers MIDI existants en notation ABC !
-
-### Conversion Simple MIDI → ABC
-```bash
-# Convertir un fichier MIDI en notation ABC
-midi2abc chanson.mid
-
-# Sauvegarder dans un fichier
-midi2abc chanson.mid > chanson.abc
-```
-
-### Exemple Pratique
-```bash
-# Exemple avec un fichier MIDI existant
-cd jerry-music/
-midi2abc 250605.mid > ma_conversion.abc
-
-# Vérifier le résultat
-cat ma_conversion.abc
-# Vous obtenez la notation ABC complète !
-```
-
-### Workflow Bidirectionnel
-```bash
-# Flux de travail complet : MIDI ↔ ABC
-midi2abc original.mid > from_midi.abc    # MIDI → ABC
-oabc from_midi.abc                       # ABC → MIDI + MP3 + Partition
-
-# Parfait pour :
-# ✅ Analyser des fichiers MIDI existants
-# ✅ Éditer la musique en format texte  
-# ✅ Créer des partitions à partir de MIDI
-# ✅ Apprendre la notation ABC
-```
-
-### Options Avancées de midi2abc
-```bash
-# Options utiles
-midi2abc -t chanson.mid        # Afficher juste les pistes
-midi2abc -c 1 chanson.mid      # Seulement le canal 1
-midi2abc -Q 0 chanson.mid      # Pas de tempo dans l'output
-midi2abc -x chanson.mid        # Format ABC étendu
-```
-
----
-
 ## 🎯 Exemple Étape par Étape
 
 ### 1. Créer Votre Fichier ABC
