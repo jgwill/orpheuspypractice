@@ -1,0 +1,23 @@
+musical:
+  name: MusicLibrary
+  sname: batch
+  prompts:
+    classical_sonata: "Compose the exposition of a sonata movement in C major, following classical form with primary and secondary themes. Include development techniques and proper voice leading. Tempo: Allegro moderato. Return in ABC notation format."
+    
+    baroque_invention: "Create a two-voice invention in the style of Bach, in D minor. Use imitative counterpoint with subject and answer, including stretto passages. Tempo: Andante. Provide in ABC notation format."
+    
+    jazz_ballad: "Compose a jazz ballad with sophisticated harmony including ii-V-I progressions, altered dominants, and extended chords. Structure: AABA form in F major. Tempo: Slow swing. Return in ABC notation."
+    
+    folk_arrangement: "Arrange a traditional folk melody with guitar accompaniment, using fingerpicking patterns and open chord voicings. Key of G major, moderate tempo. Include chord symbols. Provide in ABC notation."
+    
+    minimalist_piece: "Create a minimalist composition using phase shifting and additive processes. Start with a simple four-note motif and gradually develop it through repetition and variation. 4/4 time. ABC notation format."
+    
+    world_fusion: "Compose a piece blending Western harmony with modal scales from Eastern music traditions. Use 7/8 time signature and incorporate ornaments and microtonal inflections. Return in ABC notation."
+    
+    contemporary_pop: "Write a contemporary pop song structure with verse-chorus-bridge form. Include chord symbols and a memorable melody line. Key of A major, 120 BPM. ABC notation format."
+    
+    atonal_study: "Create a short atonal composition using twelve-tone technique. Ensure all twelve chromatic pitches are used before repetition. Include dynamic markings. Return in ABC notation format."
+    
+    blues_progression: "Compose a 12-bar blues in E major with walking bass line and jazz harmony extensions. Include turnarounds and typical blues ornaments. Medium swing tempo. ABC notation."
+    
+    chamber_music: "Write a short movement for string quartet in A minor. Use classical four-part writing with proper voice leading and motivic development. Moderato tempo. Return in ABC notation."
