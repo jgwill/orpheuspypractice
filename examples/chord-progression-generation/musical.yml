@@ -1,0 +1,15 @@
+musical:
+  name: ChordProgressions
+  sname: advanced
+  prompts:
+    classical: "Create a classical chord progression in D major using traditional voice leading. Structure: I-vi-IV-V-I (D-Bm-G-A-D) with smooth soprano line and bass in root position. Please provide in ABC notation format with tempo marking Andante."
+    
+    jazz: "Generate a jazz ii-V-I progression in C major with extended chords. Use Dm7-G7alt-Cmaj9 with jazz voicings and chromatic voice leading. Include swing rhythm notation. Return in ABC notation format."
+    
+    pop: "Develop a contemporary pop chord progression in G major using the vi-IV-I-V pattern (Em-C-G-D). Make it suitable for vocals with clear harmonic rhythm. Provide in ABC notation with tempo marking of 120 BPM."
+    
+    blues: "Construct a 12-bar blues progression in E major using dominant 7th chords (E7-E7-E7-E7-A7-A7-E7-E7-B7-A7-E7-B7). Include typical blues voice leading and rhythm. Return in ABC notation format."
+    
+    progressive: "Create a progressive rock chord progression with modulation from Am to C major, using extended harmonies like Am(add9)-F#m7b5-Fmaj7#11-G13sus4-Cmaj7. Include time signature changes. Provide in ABC notation."
+    
+    modal: "Develop a Dorian mode chord progression using Am-Bb-C-Dm-Em-F-G-Am pattern, emphasizing the characteristic b7 interval. Use quarter note rhythm in 4/4 time. Return in ABC notation format."
