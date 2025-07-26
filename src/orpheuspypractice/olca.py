@@ -6,6 +6,15 @@ from langchain import hub
 import argparse
 import yaml
 
+import langsmith 
+# Initialize LangSmith client
+LANGSMITH_API_KEY = os.getenv("LANGSMITH_API_KEY")
+if not LANGSMITH_API_KEY:
+    print("Error: LANGSMITH_API_KEY environment variable is not set.")
+    exit(1)
+client = langsmith.Client(api_key=LANGSMITH_API_KEY)
+
+
 #jgwill/olca1
 #olca1_prompt = hub.pull("jgwill/olca1") #Future use
 #https://smith.langchain.com/hub/jgwill/olca1
