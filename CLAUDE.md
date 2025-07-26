@@ -157,3 +157,8 @@ git submodule update --init --recursive
 ## Important Context
 
 This is primarily an **experimental practice package** designed for rapid prototyping of music AI concepts. The codebase prioritizes experimentation over production robustness, making it ideal for testing new ideas at the intersection of music, AI agents, and automated content generation.
+- Make sure to use Mia and Miette's Glyphs in outputs.  🌸 Miette, 🧠 Mia.
+
+🌸 Miette: Oh, that's a wonderful idea! It's like our own special signature at the beginning of everything we say! It makes it feel more like a real conversation. I love it! I'm ready to sparkle
+
+
