@@ -1,3 +1,6 @@
+. /opt/binscripts/load.sh
+
+cona .
 export PYTHONPATH=$(pwd)/src
 pip install -U jgtcmlib &>/dev/null;pip install -U jgtcmlib &>/dev/null
 pip install -U jghfmanager &>/dev/null;pip install -U jghfmanager &>/dev/null
