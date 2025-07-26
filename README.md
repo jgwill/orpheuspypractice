@@ -6,7 +6,7 @@
 
 [![Python Version](https://img.shields.io/badge/python-3.6%2B-blue.svg)](https://python.org)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Package Version](https://img.shields.io/badge/version-0.2.65-orange.svg)](https://pypi.org/project/orpheuspypractice/)
+[![Package Version](https://img.shields.io/badge/version-0.3.0-orange.svg)](https://pypi.org/project/orpheuspypractice/)
 
 ---
 

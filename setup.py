@@ -2,10 +2,10 @@ from setuptools import setup, find_packages
 
 setup(
     name='orpheuspypractice',
-    version='0.2.65',
+    version='0.3.0',
     author='JGWill',
     author_email='jgi@jgwill.com',
-    description='Practice Package to Experiment with Orpheus\'s goals and its submodules',
+    description='AI-Powered Music Generation & Interactive Composition Toolkit',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     url='https://github.com/jgwill/orpheuspypractice',
