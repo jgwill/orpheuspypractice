@@ -1,5 +1,7 @@
 # Basic OHFI Workflow Example
 
+*🎵 [← Back to Examples Overview](../README.md) | [Next: Chord Progressions →](../chord-progression-generation/README.md)*
+
 This example demonstrates the complete `ohfi` (Orpheus HuggingFace Inference) workflow from AI model inference to musical output generation.
 
 ## Overview
