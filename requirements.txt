@@ -4,7 +4,7 @@ requests
 music21
 ipython
 huggingface_hub
-jghfmanager>=0.1.5
+jghfmanager>=0.1.9
 tiktoken
 openai
 numpy
@@ -29,3 +29,4 @@ numexpr
 strip-tags
 jaraco.context
 jaraco.functools
+
