@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='orpheuspypractice',
-    version='0.3.0',
+    version='0.3.1',
     author='JGWill',
     author_email='jgi@jgwill.com',
     description='AI-Powered Music Generation & Interactive Composition Toolkit',
