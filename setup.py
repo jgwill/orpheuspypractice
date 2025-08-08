@@ -47,6 +47,9 @@ setup(
             "odep = orpheuspypractice.dependency_action:main",
             "ohfi = orpheuspypractice:jgthfcli_main",
             "wfohfi_then_oabc_foreach_json_files = orpheuspypractice:wfohfi_then_oabc_foreach_json_files",
+            # Link2ABC Integration Commands
+            "oenhance = orpheuspypractice.link2abc_cli:main",
+            "obatch-enhance = orpheuspypractice.link2abc_cli:main_batch_enhance",
         ]
     },
     classifiers=[
